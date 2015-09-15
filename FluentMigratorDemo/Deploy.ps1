@@ -1,0 +1,1 @@
+﻿.\Migrate.exe /assembly FluentMigratorDemo.dll /provider sqlserver2008 /configPath FluentMigratorDemo.dll.config /connection $OctopusEnvironmentName
