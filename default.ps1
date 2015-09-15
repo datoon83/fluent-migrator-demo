@@ -8,7 +8,7 @@ task Deploy -depends Compile {
 }
 
 task Compile{
-    msbuild $solutionFile /m /t:Rebuild /p:Configuration=Release /verbosity:quiet /p:RunOctoPack=true /p:VisualStudioVersion=12.0 
+    msbuild $solutionFile /m /t:Rebuild /p:Configuration=Release /verbosity:quiet /p:RunOctoPack=true 
 
     if($lastexitcode -ne 0) {
         throw "Compile task failed!"
@@ -21,5 +21,5 @@ function DeployDatabase()
     
     $OctopusEnvironmentName = "local"
 
-    Invoke-Expression ".\deploy.ps1" 
+    Invoke-Expression ".\deploy.ps1"
 }
